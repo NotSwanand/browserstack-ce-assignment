@@ -1,3 +1,5 @@
+import os
+from selenium import webdriver
 from selenium.webdriver import Remote
 from selenium.webdriver.chrome.options import Options
 
@@ -5,18 +7,24 @@ def setup_driver():
 
     options = Options()
 
-    options.set_capability("browserName", "Chrome")
-    options.set_capability("browserVersion", "latest")
+    # If BrowserStack SDK is running
+    if os.getenv("BROWSERSTACK_USERNAME"):
 
-    options.set_capability("bstack:options", {
-        "sessionName": "El Pais Scraper Test",
-        "buildName": "browserstack-el-pais-scraper",
-        "projectName": "browserstack-assignment"
-    })
+        options.set_capability("browserName", "Chrome")
 
-    driver = Remote(
-        command_executor="https://hub-cloud.browserstack.com/wd/hub",
-        options=options
-    )
+        options.set_capability("bstack:options", {
+            "sessionName": "El Pais Scraper Test",
+            "buildName": "browserstack-el-pais-scraper",
+            "projectName": "browserstack-assignment"
+        })
+
+        driver = Remote(
+            command_executor="https://hub-cloud.browserstack.com/wd/hub",
+            options=options
+        )
+
+    else:
+        # Run locally
+        driver = webdriver.Chrome(options=options)
 
     return driver
