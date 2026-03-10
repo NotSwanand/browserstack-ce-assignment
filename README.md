@@ -26,6 +26,7 @@ It also supports **cross-browser execution using BrowserStack Automate**.
 
 ## Project Structure
 
+```bash
 browserstack-assignment
 │
 ├── main.py
@@ -49,7 +50,7 @@ browserstack-assignment
 │
 ├── requirements.txt
 └── README.md
-
+```
 
 ### Module Responsibilities
 
@@ -152,17 +153,17 @@ crisis 2
 ### BrowserStack Parallel Run
 ![BrowserStack](screenshots/browserstack-run.png)
 
-Challenges & Considerations
+## Challenges & Considerations
 
--Handling dynamic page elements and cookie banners
--Ensuring stable Selenium waits using WebDriverWait
--Managing translation requests efficiently
--Extracting content from pages with varying HTML structures
+- Handling dynamic page elements and cookie banners
+- Ensuring stable Selenium waits using `WebDriverWait`
+- Managing translation requests efficiently
+- Extracting content from pages with varying HTML structures
 
-Possible Improvements
+## Possible Improvements
 
--Add asynchronous scraping for faster execution
--Store results in a database instead of console output
--Add logging and monitoring
--Implement retry mechanisms for network failures
--Extend analysis to include NLP-based insights
+- Add asynchronous scraping for faster execution
+- Store results in a database instead of console output
+- Add logging and monitoring
+- Implement retry mechanisms for network failures
+- Extend analysis to include NLP-based insights
