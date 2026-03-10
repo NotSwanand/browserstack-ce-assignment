@@ -147,7 +147,7 @@ crisis 2
 ## Execution Proof
 
 ### Local Execution Output
-![Terminal](screenshots/terminal-output.png)
+![Terminal](screenshots/terminal-output-v2.png)
 
 ### BrowserStack Parallel Run
 ![BrowserStack](screenshots/browserstack-run.png)
